@@ -1,0 +1,61 @@
+<div class="image-component-wrapper" *ngIf="giphyGifObject">
+  <div class="card mb-3">
+    <div class="card-header text-center img-title">{{ giphyGifObject.title }}</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <img [hidden]="loaded" class="img-loading" src="/assets/images/loading.gif">
+          <img
+            class="img-loaded"
+            [hidden]="!loaded"
+            [src]="giphyGifObject.images.fixed_height.url"
+            [alt]="giphyGifObject.title"
+            (load)="loaded = true"
+          >
+        </div>
+        <div class="col-sm-6 d-none d-sm-block">
+          <div class="table-wrapper">
+            <table>
+              <tr>
+                <td>Type:</td>
+                <td><span class="img-type">
+                  {{ giphyGifObject.type | uppercase }}
+                </span></td>
+              </tr>
+              <tr>
+                <td>ID:</td>
+                <td><span class="img-id">
+                  {{ giphyGifObject.id }}
+                </span></td>
+              </tr>
+              <tr>
+                <td>URL:</td>
+                <td><a class="img-url" [href]="giphyGifObject.bitly_url" target="_blank">
+                  {{ giphyGifObject.bitly_url }}
+                </a></td>
+              </tr>
+              <tr>
+                <td>Source:</td>
+                <td><a class="img-source" [href]="giphyGifObject.source_post_url" target="_blank">
+                  {{ giphyGifObject.source_tld }}
+                </a></td>
+              </tr>
+              <tr *ngIf="giphyGifObject.rating">
+                <td>Rating:</td>
+                <td><span class="img-rating">{{ giphyGifObject.rating | uppercase }}</span></td>
+              </tr>
+              <tr *ngIf="giphyGifObject.import_datetime">
+                <td>Created:</td>
+                <td><span class="img-created">{{ giphyGifObject.import_datetime | date:'dd/MM/yyyy - HH:mm'}}</span></td>
+              </tr>
+              <tr>
+                <td>User:</td>
+                <td><span class="img-user">{{ giphyGifObject.username ? giphyGifObject.username : 'Unknown' }}</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

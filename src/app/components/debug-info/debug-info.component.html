@@ -1,0 +1,10 @@
+<div class="alert alert-light metadata-info" *ngIf="this.pagination && this.images">
+  <div class="row">
+    <div class="col-sm-6">
+      <span class="total-count-text">{{ this.pagination.total_count }}</span> total images available.
+    </div>
+    <div class="col-sm-6">
+      <span class="loaded-count-text">{{ this.images.length }}</span> metadata objects loaded.
+    </div>
+  </div>
+</div>

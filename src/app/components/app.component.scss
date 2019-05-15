@@ -1,0 +1,31 @@
+.main-content {
+  max-width: 640px;
+
+  .image-search-input {
+    margin: 10px auto;
+  }
+
+  cdk-virtual-scroll-viewport {
+    height: 82vh;
+  }
+
+  hr {
+    margin: 0 0 8px;
+  }
+}
+
+.credits {
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFF;
+
+  font-size: 12px;
+  text-align: center;
+
+  a {
+    color: #FFF;
+  }
+}

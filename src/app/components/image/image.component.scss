@@ -1,0 +1,35 @@
+.image-component-wrapper {
+  display: block;
+  margin: auto;
+  overflow: hidden;
+
+  .card {
+    max-width: 586px !important;
+    border: 1px solid #ced4da;
+
+    .table-wrapper {
+      overflow: hidden;
+
+      table {
+        tr {
+          line-height: 1.6;
+
+          td:first-child {
+            padding-right: 6px;
+          }
+        }
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: auto;
+      height: 200px;
+    }
+  }
+}

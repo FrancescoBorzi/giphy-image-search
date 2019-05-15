@@ -1,0 +1,43 @@
+<ngx-loading-bar></ngx-loading-bar>
+
+<div class="container main-content">
+
+  <div class="form-row">
+    <div class="col-md-12 col-sm-10 col-9">
+      <input
+        class="form-control image-search-input"
+        placeholder="Search GIFs..."
+        [(ngModel)]="query" (ngModelChange)='queryModelChanged.next($event)'
+      >
+    </div>
+  </div>
+
+  <app-debug-info *ngIf="showDebugInfo" [images]="images" [pagination]="pagination"></app-debug-info>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-12">
+
+      <cdk-virtual-scroll-viewport itemSize="291">
+        <div *ngIf="images" id="image-list-wrapper">
+          <ng-container *cdkVirtualFor="let image of images; templateCacheSize: 100">
+
+            <app-image [giphyGifObject]="image"></app-image>
+
+          </ng-container>
+        </div>
+      </cdk-virtual-scroll-viewport>
+
+      <div *ngIf="error" class="alert alert-danger" id="error-wrapper">
+        An error occurred while querying the API, we apologise for the inconvenience
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="credits">
+  Created by <a href="https://github.com/FrancescoBorzi" target="_blank"><strong>Francesco Borzì</strong></a>
+</div>
