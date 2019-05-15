@@ -5,16 +5,16 @@ import { PageObject } from '../../test-utils/page-object';
 import { GiphyGifObject } from '../../types';
 
 class ImagePage extends PageObject<ImageComponent> {
-  get imgTitle() { return this.query<HTMLDivElement>('.img-title') };
-  get loadingImg() { return this.query<HTMLImageElement>('.img-loading') };
-  get loadedImg() { return this.query<HTMLImageElement>('.img-loaded') };
-  get imgType() { return this.query<HTMLSpanElement>('.img-type') };
-  get imgId() { return this.query<HTMLSpanElement>('.img-id') };
-  get imgUrl() { return this.query<HTMLAnchorElement>('.img-url') };
-  get imgSource() { return this.query<HTMLAnchorElement>('.img-source') };
-  get imgRating() { return this.query<HTMLSpanElement>('.img-rating') };
-  get imgCreated() { return this.query<HTMLSpanElement>('.img-created') };
-  get imgUser() { return this.query<HTMLSpanElement>('.img-user') };
+  get imgTitle() { return this.query<HTMLDivElement>('.img-title') }
+  get loadingImg() { return this.query<HTMLImageElement>('.img-loading') }
+  get loadedImg() { return this.query<HTMLImageElement>('.img-loaded') }
+  get imgType() { return this.query<HTMLSpanElement>('.img-type') }
+  get imgId() { return this.query<HTMLSpanElement>('.img-id') }
+  get imgUrl() { return this.query<HTMLAnchorElement>('.img-url') }
+  get imgSource() { return this.query<HTMLAnchorElement>('.img-source') }
+  get imgRating() { return this.query<HTMLSpanElement>('.img-rating') }
+  get imgCreated() { return this.query<HTMLSpanElement>('.img-created') }
+  get imgUser() { return this.query<HTMLSpanElement>('.img-user') }
 
   getImgWrapper(assert = true) {
     return this.query<HTMLDivElement>('.image-component-wrapper', assert)

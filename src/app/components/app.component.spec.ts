@@ -11,13 +11,12 @@ import { PageObject } from '../test-utils/page-object';
 import { GiphyApiService } from '../services/giphy-api.service';
 import { GiphyGifObject, GiphySearchResult } from '../types';
 import { DebugInfoComponent } from './debug-info/debug-info.component';
-import { before } from 'selenium-webdriver/testing';
 
 class AppPage extends PageObject<AppComponent> {
-  get searchInput() { return this.query<HTMLInputElement>('.image-search-input') };
-  get imagesListWrapper() { return this.query<HTMLInputElement>('#image-list-wrapper') };
-  get debugInfo() { return this.query<HTMLElement>('app-debug-info', false); };
-  get errorWrapper() { return this.query<HTMLInputElement>('#error-wrapper', false) };
+  get searchInput() { return this.query<HTMLInputElement>('.image-search-input') }
+  get imagesListWrapper() { return this.query<HTMLInputElement>('#image-list-wrapper') }
+  get debugInfo() { return this.query<HTMLElement>('app-debug-info', false); }
+  get errorWrapper() { return this.query<HTMLInputElement>('#error-wrapper', false) }
   get imageComponents() { return this.queryAll<HTMLElement>('app-image'); }
 }
 
