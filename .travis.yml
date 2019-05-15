@@ -12,4 +12,3 @@ script:
   - npm run lint
   - npm run build_ci
   - npm run test_ci
-  - npm run e2e_ci
