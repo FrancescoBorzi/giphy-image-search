@@ -13,10 +13,10 @@ import { GiphyGifObject, GiphySearchResult } from '../types';
 import { DebugInfoComponent } from './debug-info/debug-info.component';
 
 class AppPage extends PageObject<AppComponent> {
-  get searchInput() { return this.query<HTMLInputElement>('.image-search-input') }
-  get imagesListWrapper() { return this.query<HTMLInputElement>('#image-list-wrapper') }
+  get searchInput() { return this.query<HTMLInputElement>('.image-search-input'); }
+  get imagesListWrapper() { return this.query<HTMLInputElement>('#image-list-wrapper'); }
   get debugInfo() { return this.query<HTMLElement>('app-debug-info', false); }
-  get errorWrapper() { return this.query<HTMLInputElement>('#error-wrapper', false) }
+  get errorWrapper() { return this.query<HTMLInputElement>('#error-wrapper', false); }
   get imageComponents() { return this.queryAll<HTMLElement>('app-image'); }
 }
 
@@ -255,9 +255,9 @@ describe('AppComponent', () => {
       fixture.detectChanges();
 
       if (error) {
-        expect(page.errorWrapper).toBeTruthy()
+        expect(page.errorWrapper).toBeTruthy();
       } else {
-        expect(page.errorWrapper).toBeFalsy()
+        expect(page.errorWrapper).toBeFalsy();
       }
     });
   }
@@ -268,9 +268,9 @@ describe('AppComponent', () => {
       fixture.detectChanges();
 
       if (setting) {
-        expect(page.debugInfo).toBeTruthy()
+        expect(page.debugInfo).toBeTruthy();
       } else {
-        expect(page.debugInfo).toBeFalsy()
+        expect(page.debugInfo).toBeFalsy();
       }
     });
   }
